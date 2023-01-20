@@ -24,8 +24,8 @@ pygame.init()
 
 screen = pygame.display.set_mode([300,500]) #Ekraani suuruse määramine
 pygame.display.set_caption("Foor - Ott-Saamuel Oja") #Nime panemine ekraanile
-pygame.draw.rect(screen, [126, 128, 130], [90, 10, 110, 280], 2) #Joonistame ristküliku
-pygame.draw.circle(screen, [7, 222, 39], [145,240], 40, 0) #Joonistame ringi
+pygame.draw.rect(screen, [126, 128, 130], [90, 10, 110, 280], 2) #Joonistame Vajalikud kujundid et tuleks õige pilt
+pygame.draw.circle(screen, [7, 222, 39], [145,240], 40, 0)
 pygame.draw.circle(screen, [240, 228, 7], [145,150], 40, 0)
 pygame.draw.circle(screen, [240, 7, 7], [145,65], 40, 0)
 pygame.draw.line(screen, [126,128,130], [145,290], [145,390], 2)
