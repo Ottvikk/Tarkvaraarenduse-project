@@ -18,7 +18,7 @@ print("1.Liitmine")
 print("2.Lahutamine")
 print("3.Korrutamine")
 print("4.Jagamine")
-print("5.ümardamine")
+print("5.Keskmise arvutamine")
 while True:
     # Siin sa valid millist sa tahad arvutada
     choice = input("Kirjuta valik(1/2/3/4/5): ")
