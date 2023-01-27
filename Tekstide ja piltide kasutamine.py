@@ -26,8 +26,8 @@ screen.blit(mõõk,[0,150])#Pildi suurus
 vikklogo = pygame.image.load("img/vikklogo.png")#Lisame pildi
 vikklogo = pygame.transform.scale(vikklogo, [200, 30])#Pildi asukoht
 screen.blit(vikklogo,[0,0])#Pildi suurus
-pygame.draw.rect(screen, [60, 60, 60], [0, 0, 180, 35], 2)
-pygame.draw.arc(screen,[0,0,0], [90,-2,120,39],  -3.14/3, 1)
+pygame.draw.rect(screen, [60, 60, 60], [0, 0, 180, 35], 2) #Joonistab ruudu
+pygame.draw.arc(screen,[0,0,0], [90,-2,120,39],  -3.14/3, 1) #Joonestab kaare
 pygame.display.flip() #Keerab ekraani
 
 running=True
