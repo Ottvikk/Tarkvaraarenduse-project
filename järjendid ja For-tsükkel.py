@@ -1,4 +1,7 @@
 """
+number = [ 0, 'üks', 2, 'kolm']
+print(number[1])
+""""""
 nimi = ['Malle', 'Volli', 'Salme', 'Kustav']
 print (nimi[0])
 
