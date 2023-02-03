@@ -25,11 +25,11 @@ for linn in ["Tartu", "Tallinn", "Põltsamaa"]:
 numbrid = [7, 5, 8, 1, 4, 5]
 for nr in numbrid:
     print(nr)
-"""
+""""""
 a = [12, 23, 34, 45, 56]
 i = 0
 for el in a:
-    if el > 20:
+    if el > 30:
         i += 1
 print(i)
-
+"""

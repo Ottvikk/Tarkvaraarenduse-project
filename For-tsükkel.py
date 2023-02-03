@@ -23,12 +23,12 @@ a.append(2)
 a = [2,3,4]
 a[2] = 90
 a[elemendi_indeks] = uus_väärtus
-""""""
-f = open('andmed.txt')
+"""
+f = open('Uus Microsoft Wordi dokument.docx')
 for rida in f:
     print('Lugesin järgneva rea: ' + rida)
     f.close()
-""""""
+"""
 f = open('nimed.txt')
 while True:
     nimi = f.readline() # loeb failist ühe rea
