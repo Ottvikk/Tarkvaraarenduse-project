@@ -24,10 +24,10 @@ a = [2,3,4]
 a[2] = 90
 a[elemendi_indeks] = uus_väärtus
 """
-f = open('Uus Microsoft Wordi dokument.docx')
+f = open('test.txt')
 for rida in f:
     print('Lugesin järgneva rea: ' + rida)
-    f.close()
+f.close()
 """
 f = open('nimed.txt')
 while True:
