@@ -13,26 +13,28 @@ list(range(5, 0, -1))
 for i in range(5):
     print(i)
 """"""
+for i in range (1,5, 1):
+    print(i)
+"""
 arvud = [2,4,6,7,2]
 for i in range(0,5,1):
     print(arvud[i])
-""""""
+"""
 a = []
 a.append(2)
 """"""
 a = [2,3,4]
 a[2] = 90
 a[elemendi_indeks] = uus_väärtus
-"""
+""""""
 f = open('test.txt')
 for rida in f:
     print('Lugesin järgneva rea: ' + rida)
 f.close()
-"""
+""""""
 f = open('nimed.txt')
 while True:
-    nimi = f.readline() # loeb failist ühe rea
-    # kui jõuti faili lõppu, siis readline tagastab tühja sõne
+    nimi = f.readline() 
     if nimi == "":
         break
 
@@ -45,5 +47,8 @@ for rida in f:
 f.close()
 suvaline = random.randint(0,len(nimekiri)- 1)
 print(nimekiri[suvaline])
+""""""
+print(list(range(5)))
+""""""
+print(list(range(5,0,-1)))
 """
-
