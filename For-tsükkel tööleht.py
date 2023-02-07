@@ -21,5 +21,14 @@ for a in range(0, 7, 1):
 arvud = [3,8]
 a = [2,5]
 """
+"""
+import turtle
 
-from turtle import *
+for i in range(4):
+   turtle.forward(50)
+   turtle.right(90)
+turtle.done()
+"""
+
+arvud = [3,5,6,7]
+
