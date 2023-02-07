@@ -40,3 +40,11 @@ print(total_sum)
 """
 
 
+a = [2, 3, 4, 4]
+for i in range(0, 5, 1):
+    if (a % 2 ) == 0:
+        print("paaris arv")
+    else:
+        print("paaritu arv")
+print(n)
+
