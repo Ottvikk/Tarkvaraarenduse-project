@@ -53,15 +53,16 @@ while True:
         break
 
 f.close()
-""""""
+"""
+import random
 nimekiri = []
-f = open('nimekiri_10it.txt',encoding='utf-8')
+f = open('test.txt',encoding='utf-8')
 for rida in f:
     nimekiri.append(rida.strip())
 f.close()
 suvaline = random.randint(0,len(nimekiri)- 1)
 print(nimekiri[suvaline])
-""""""
+"""
 print(list(range(5)))
 """"""
 print(list(range(5,0,-1)))
