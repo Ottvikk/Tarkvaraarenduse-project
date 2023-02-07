@@ -29,6 +29,14 @@ for i in range(4):
    turtle.right(90)
 turtle.done()
 """
+"""
+n = int(input("Mitu numbrit sa tahad sisestada?: "))
+total_sum = 0
 
-arvud = [3,5,6,7]
+for i in range(n):
+    # 'x += y' on sama mis  x = x+y
+    total_sum += int(input())
+print(total_sum)
+"""
+
 
