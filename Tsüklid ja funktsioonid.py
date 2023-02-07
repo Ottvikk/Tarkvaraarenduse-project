@@ -10,7 +10,7 @@ while  värv == punane or sinine or kolane or valge or must:
 
 
 
-screen=pygame.display.set_mode([640,480])
+    screen =pygame.display.set_mode([640,480])
 pygame.display.set_caption("Harjutamine")
 screen.fill([83, 219, 120])
 
