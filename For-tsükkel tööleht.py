@@ -22,10 +22,4 @@ arvud = [3,8]
 a = [2,5]
 """
 
-def Add(arvud, a):
-    while (a != 0):
-        carry = x & y
-        x = x ^ y
-        y = carry << 1
-    return x
-print(Add(27,5))
+from turtle import *
