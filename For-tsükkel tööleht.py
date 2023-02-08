@@ -48,8 +48,12 @@ for i in [2,3,4,4]:
 
 print("Sisesta kuupäev näiteks nagu 10.02.1990")
 aeg = input(str("Sisesta päev, kuu ja aasta: "))
+for a in range(0,2):
+    print(aeg[a])
+a1 = aeg[a].join
+print(a1)
+print("päev" + str(a1))
 
-for aeg in (aeg):
-    print("päev" + aeg)
+
 
 
