@@ -46,5 +46,10 @@ for i in [2,3,4,4]:
         print("Paaritu arv")
 """
 
+print("Sisesta kuupäev näiteks nagu 10.02.1990")
+aeg = input(str("Sisesta päev, kuu ja aasta: "))
+
+for aeg in (aeg):
+    print("päev" + aeg)
 
 
