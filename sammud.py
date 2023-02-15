@@ -6,7 +6,7 @@ while True:
     print(nimi)
     if nimi == "":
         break
-kogus = kogus.append(7) = nimi
+
 print(len(nimi))
 print(kogus)
 
