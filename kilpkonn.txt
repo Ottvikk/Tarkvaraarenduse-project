@@ -1,4 +1,2 @@
-edasi 100 
-paremale 50
-tagasi 100
-vasakule 50
+forward(100)
+right(90)
