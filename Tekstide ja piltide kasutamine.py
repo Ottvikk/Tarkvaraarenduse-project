@@ -12,7 +12,7 @@ bg_shop = pygame.image.load("img/bg_shop.jpg") #Lisame pildi
 screen.blit(bg_shop,[0,0]) #Pildi asukoht
 bg_shop = pygame.transform.scale(bg_shop, [300, 120]) #Pildi suurus
 seller = pygame.image.load("img/seller.jpg")#Lisame pildi
-seller = pygame.transform.scale(seller, [200, 270])#Pildi asukoht
+seller = pygame.transform.scale(seller, [300, 270])#Pildi asukoht
 screen.blit(seller,[200,150])#Pildi suurus
 chat = pygame.image.load("img/chat.jpg")#Lisame pildi
 chat = pygame.transform.scale(chat, [250, 170])#Pildi asukoht
