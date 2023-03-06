@@ -67,8 +67,7 @@ while not gameover:
     if posB > screenY-pad.get_rect().height or posB < 0:
         speedB = -speedB
 
-    if posX > posB-ball.get_rect().width or posB < 0:
-        speedX = -speedX
+
 
 
     # graafika kuvamine ekraanil
