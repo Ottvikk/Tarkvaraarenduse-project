@@ -58,14 +58,17 @@ while not gameover:
     if posY > screenY - ball.get_rect().height or posY < 0:
         speedY = -speedY
 
-    if posX > screenX - pad.get_rect().width or posX < 10:
+    if posA > screenX - pad.get_rect().width or posA < 0:
         speedA = -speedA
 
-    if posY > screenY - pad.get_rect().height or posY < 10:
+    if posB > screenY - pad.get_rect().height or posB < 0:
         speedB = -speedB
 
+    if posY > posB - ball.get_rect().height:
+        speedY = -speedY
+
     for ball in balls[:]:
-        if pad.colliderect(ball):
+        if ball.colliderect(pad):
             balls.remove(pad)
             score += 1
 

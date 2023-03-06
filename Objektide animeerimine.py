@@ -34,7 +34,6 @@ while not gameover:
     Blue2Y += Bspeed
     screen.blit(f1_red,(RedX, RedY))
 
-    screen.blit(pygame.font.Font(None, 28).render(f"Score: {score}", True, red,) (10,20))
 
 
     pygame.display.update()
