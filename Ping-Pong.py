@@ -35,12 +35,8 @@ padbl = print(pad.get_rect().bottomleft)
 # kiirus ja asukoht
 posX, posY = 0, 0
 speedX, speedY = 7, 4
-posA, posB = 320, 0
-speedA, speedB = 0, 3.7
-
-
-
-
+posA, posB = 350, 0
+speedA, speedB = 0, 3
 
 gameover = False
 while not gameover:
@@ -56,12 +52,12 @@ while not gameover:
     bal = pygame.Rect(posX, posY, 120, 140)
     screen.blit(ball, bal)
     screen.blit(pad, (posB, posA))
+    pad = pygame.transform.scale(pad, [120,20])
+    ball = pygame.transform.scale(ball,[20,20])
     posX += speedX
     posY += speedY
     posB += speedB
     posA += speedA
-
-
 
     # kui puudub ääri, siis muudab suunda
 
@@ -77,8 +73,6 @@ while not gameover:
     if posB > screenY-pad.get_rect().height or posB < 0:
         speedB = -speedB
 
-    if ball == padtl or ball == padtr:
-        ball.get_rect().height
 
 
     # graafika kuvamine ekraanil
