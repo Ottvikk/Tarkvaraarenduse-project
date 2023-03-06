@@ -11,6 +11,7 @@ pink = [255, 153, 255]
 lGreen = [153, 255, 153]
 lBlue = [153, 204, 255]
 
+
 # ekraani seaded
 screenX = 640
 screenY = 480
@@ -26,11 +27,17 @@ score = 0
 ball = pygame.image.load("img/ball.png")
 pad = pygame.image.load("img/pad.png")
 
+padtr = print(pad.get_rect().topright)
+padtl = print(pad.get_rect().topleft)
+padbr = print(pad.get_rect().bottomright)
+padbl = print(pad.get_rect().bottomleft)
+
 # kiirus ja asukoht
 posX, posY = 0, 0
 speedX, speedY = 7, 4
 posA, posB = 320, 0
 speedA, speedB = 0, 3.7
+
 
 
 
@@ -53,6 +60,9 @@ while not gameover:
     posY += speedY
     posB += speedB
     posA += speedA
+
+
+
     # kui puudub ääri, siis muudab suunda
 
     if posX > screenX-ball.get_rect().width or posX < 0:
@@ -67,7 +77,8 @@ while not gameover:
     if posB > screenY-pad.get_rect().height or posB < 0:
         speedB = -speedB
 
-
+    if ball == padtl or ball == padtr:
+        ball.get_rect().height
 
 
     # graafika kuvamine ekraanil
