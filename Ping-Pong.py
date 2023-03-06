@@ -34,6 +34,7 @@ posX, posY = 0, 0
 speedX, speedY = 7, 4
 posA, posB = 320, 0
 speedA, speedB = 0, 3.7
+
 gameover = False
 while not gameover:
     # fps
@@ -52,6 +53,7 @@ while not gameover:
     posB += speedB
     posA += speedA
     # kui puudub ääri, siis muudab suunda
+
     if posX > screenX - ball.get_rect().width or posX < 0:
         speedX = -speedX
 
@@ -64,13 +66,11 @@ while not gameover:
     if posB > screenY - pad.get_rect().height or posB < 0:
         speedB = -speedB
 
-    if posY > posB - ball.get_rect().height:
-        speedY = -speedY
+    if (ball.isTouching(pad)):
+        {pad.setAnimation("bounce")}
 
-    for ball in balls[:]:
-        if ball.colliderect(pad):
-            balls.remove(pad)
-            score += 1
+
+
 
 
     # graafika kuvamine ekraanil
