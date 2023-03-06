@@ -1,5 +1,5 @@
 
-import pygame,random,sys
+import pygame,random,sys #Impordib pygame'i, random'i ja sys'i
 
 #Erinevad värvid
 white = (255, 255, 255)
