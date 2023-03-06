@@ -22,9 +22,6 @@ clock = pygame.time.Clock()
 balls = []
 score = 0
 
-
-
-
 # graafika laadimine
 ball = pygame.image.load("img/ball.png")
 pad = pygame.image.load("img/pad.png")
@@ -65,12 +62,6 @@ while not gameover:
 
     if posB > screenY - pad.get_rect().height or posB < 0:
         speedB = -speedB
-
-    if (ball.isTouching(pad)):
-        {pad.setAnimation("bounce")}
-
-
-
 
 
     # graafika kuvamine ekraanil
