@@ -43,7 +43,8 @@ while not gameover:
             sys.exit()
 
     # pildi lisamine ekraanile
-    screen.blit(ball, (posX, posY))
+    bal = pygame.Rect(posX, posY, 120, 140)
+    screen.blit(ball, bal)
     screen.blit(pad, (posB, posA))
     posX += speedX
     posY += speedY
@@ -62,6 +63,7 @@ while not gameover:
 
     if posB > screenY - pad.get_rect().height or posB < 0:
         speedB = -speedB
+
 
 
     # graafika kuvamine ekraanil
