@@ -22,11 +22,6 @@ clock = pygame.time.Clock()
 balls = []
 score = 0
 
-font_style = pygame.font.SysFont("bahnschrift", 25)
-score_font = pygame.font.SysFont("comicsansms", 35)
-def Your_score(score):
-    value = score_font.render("Your Score: " + str(score), True, red)
-    dis.blit(value, [0, 0])
 
 
 
@@ -71,7 +66,7 @@ while not gameover:
 
     for ball in balls[:]:
         if pad.colliderect(ball):
-            balls.remove(pad    )
+            balls.remove(pad)
             score += 1
 
 
