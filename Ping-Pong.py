@@ -32,6 +32,9 @@ speedX, speedY = 7, 4
 posA, posB = 320, 0
 speedA, speedB = 0, 3.7
 
+
+
+
 gameover = False
 while not gameover:
     # fps
@@ -52,18 +55,20 @@ while not gameover:
     posA += speedA
     # kui puudub ääri, siis muudab suunda
 
-    if posX > screenX - ball.get_rect().width or posX < 0:
+    if posX > screenX-ball.get_rect().width or posX < 0:
         speedX = -speedX
 
-    if posY > screenY - ball.get_rect().height or posY < 0:
+    if posY > screenY-ball.get_rect().height or posY < 0:
         speedY = -speedY
 
-    if posA > screenX - pad.get_rect().width or posA < 0:
+    if posA > screenX-pad.get_rect().width or posA < 0:
         speedA = -speedA
 
-    if posB > screenY - pad.get_rect().height or posB < 0:
+    if posB > screenY-pad.get_rect().height or posB < 0:
         speedB = -speedB
 
+    if posX > posB-ball.get_rect().width or posB < 0:
+        speedX = -speedX
 
 
     # graafika kuvamine ekraanil
