@@ -1,14 +1,14 @@
 """
-Linnad = ["Tartu", "Võru", "Valga", "Viljandi", "Narva", "Pärnu", "Tallinn"]
-linn = sorted(Linnad)
-print(linn)
+Linnad = ["Tartu", "Võru", "Valga", "Viljandi", "Narva", "Pärnu", "Tallinn"] #Järjend
+linn = sorted(Linnad) #defineerib sõna linn
+print(linn) #prindib sõna linn
 x = len(Linnad)
-print("Järjendis on " + str(x) + " linna.")
+print("Järjendis on " + str(x) + " linna.") #Prindib lause järjendis on siis järjendis olev lause ja linn lõppu
 """
 """
-a =[2,3,1,5]
+a =[2,3,1,5] # Andmed
 b =[6,4]
-c = a + b
+c = a + b 
 d = sorted(c)
 print(d)
 """
@@ -47,14 +47,11 @@ for i in [2,3,4,4]:
 """
 
 print("Sisesta kuupäev näiteks nagu 10.02.1990")
+aeg = []
 aeg = input("Sisesta päev, kuu ja aasta: ")
-for a in range(1):
-    print(aeg[a])
-for b in range(1,2):
-    print(aeg[b])
-b = str(aeg[a])
-a1 = aeg.join(aeg[1])
-print("päev" + str(a1))
+aeg1 = aeg.split()
+
+
 
 
 
