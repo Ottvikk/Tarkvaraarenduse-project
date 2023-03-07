@@ -1,9 +1,9 @@
-forward 30
-right 90
-forward 30
-right 90
-forward 30
-right 90
-forward 30
-left 90
-forward 50
+edasi (30)
+paremale (90)
+edasi (30)
+paremale (90)
+edasi (30)
+paremale (90)
+edasi (30)
+vasakule (90)
+
