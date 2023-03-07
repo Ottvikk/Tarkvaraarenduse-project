@@ -10,15 +10,12 @@ green = (0, 255, 0)
 blue = (50, 153, 213)
 
 pygame.init()
-#Ekraani seaded ja skoori seis
-screen = pygame.display.set_mode([640, 480])
+screen = pygame.display.set_mode([640, 480]) #Ekraani seaded ja skoori seis
 pygame.display.set_caption("Death Rally")
 clock = pygame.time.Clock()
 score = 0
 
-
-#Piltide mängu lisamine
-bg = pygame.image.load("img/bg_rally.jpg")
+bg = pygame.image.load("img/bg_rally.jpg")#Piltide mängu lisamine
 bg = pygame.transform.scale(bg, [640, 480])
 bgX = 0
 blue1 = pygame.image.load("img/f1_blue.png")

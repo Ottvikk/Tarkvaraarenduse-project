@@ -41,19 +41,19 @@ for i in [2,3,4,4]: #For tsükkel
     else:
         print("Paaritu arv")#Kui ei jagu 2-ga siis prindib välja paaritu arv
 """
-
+"""
 print("Sisesta kuupäev näiteks nagu 10.02.1990") #Prindib välja näite kuidas sisestada kuupäeva
 aeg = [] #Tühi järjend
 aeg = input(str("Sisesta päev, kuu ja aasta: "))  #Küsib kasutajalt päeva, kuupäeva ja aastat
 
-print(aeg)
-aeg1 = aeg.split('.')
-print(aeg1)
-print(str(aeg1[1]))
+print(aeg)#Prindib järjendi
+aeg1 = aeg.split('.')#Lõhub järjendi ära mitmeks osaks
+print(aeg1)#Prindib järjendi
+print(str(aeg1[1]))#Prindib järjendi osad ühekaupa
 print(str(aeg1[0]))
 print(str(aeg1[2]))
 
-if aeg1[1] == '01':
+if aeg1[1] == '01':Kui kasutaja kirjutab kuu numbritega siis see muudab numbri tähtedeks 
     a = 'jaanuar'
     print(a)
 elif aeg[1] == '02':
@@ -91,7 +91,8 @@ else:
     a = 'detsember'
     print(a)
 
-print(aeg1[0] + '.' + a + ' ' + aeg1[2])
+print(aeg1[0] + '.' + a + ' ' + aeg1[2]) #Prindib kasutajale kuupäeva
+"""
 
 
 
