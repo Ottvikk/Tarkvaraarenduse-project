@@ -1,113 +1,87 @@
 
-import pygame, random, sys
+import pygame,random,sys #Impordib pygame'i, random'i ja sys'i
 
-screenX = 640
-screenY = 480
-screen = pygame.display.set_mode((screenX, screenY))
-pygame.display.set_caption("Death rally")
+#Erinevad värvid
+white = (255, 255, 255)
+yellow = (255, 255, 102)
+black = (0, 0, 0)
+red = (213, 50, 80)
+green = (0, 255, 0)
+blue = (50, 153, 213)
+
+pygame.init()
+#Ekraani seaded ja skoori seis
+screen = pygame.display.set_mode([640, 480])
+pygame.display.set_caption("Death Rally")
 clock = pygame.time.Clock()
 score = 0
 
-bg_rally = pygame.image.load("img/bg_rally.jpg")
-f1_red = pygame.image.load("img/f1_red.png")
-f1_blue = pygame.image.load("img/f1_blue.png")
-blue1 = f1_blue
-blue2 = f1_blue
 
+#Piltide mängu lisamine
+bg = pygame.image.load("img/bg_rally.jpg")
+bg = pygame.transform.scale(bg, [640, 480])
+bgX = 0
+blue1 = pygame.image.load("img/f1_blue.png")
+blue2 = blue1
+red = pygame.image.load("img/f1_red.png")
 
-RedX, RedY = 300, 370
+Blue1Y, Blue1X = random.randint(0, 100), random.randint(130, 460)#Siniste autode X ja Y koordinaadid
+Blue2Y, Blue2X = random.randint(0, 100), random.randint(130, 460)
+RedX, RedY = 300, 390  #Punase auto koordinaadid
+
+Bspeed = 3   #Siniste autode kiirus
 
 gameover = False
-while not gameover:
-    clock.tick(100)
-    for event in pygame.event.get():
+while not gameover:  #See on While-tsükklis nii kaua kuni mäng on läbi
+    clock.tick(120)  # FPS
+    for event in pygame.event.get():#Selle abil saab akent ristist kinni panna
         if event.type == pygame.QUIT:
             sys.exit()
 
-    coords = []
-    for i in range(10):
-        Blue1X, Blue1Y = random.randint(130, 460), random.randint(0, 100)
-        Blue2X, Blue2Y = random.randint(130, 460), random.randint(0, 100)
-        Bspeed = random.randint(1, 5)
-        coords.append([Blue1X,Blue1Y,Bspeed])
+    #Taustapildi lisamine mängu
+    screen.blit(bg, (0, 0))
 
-    # loendist koordinaadid
-    for i in range(len(coords)):
-        coords[i][1] += 1
-        # kui jõuab alla, siis muudame ruduu alguspunkti
-        if coords[i][1] > screenY:
-            coords[i][1] = random.randint(130, 460)
-            coords[i][0] = random.randint(0, screenX)
-
-    screen.blit(bg_rally, [0, 0])
+    #Siniste autode lisamine mängu ning nende asukoha panemine
     screen.blit(blue1, (Blue1X, Blue1Y))
     screen.blit(blue2, (Blue2X, Blue2Y))
-    screen.blit(f1_red, (RedX, RedY))
-    pygame.display.update()
+    screen.blit(red, (RedX, RedY))#Punase auto mängu lisamine
+    Blue1Y += Bspeed + random.randint(1,3) + 0.5#Siniste autode liikumiseks valmistuv kiiruse sättimine
+    Blue2Y += Bspeed + random.randint(1,3)
 
-pygame.quit()
-"""
-import pygame, sys, random
+    screen.blit(pygame.font.Font(None, 28).render(f"Score: {score}", True, [255,255,255]), [0,0]) #Skoori näitamiseks valmistuv rida
 
-pygame.init()
+    if Blue1Y >= 480: #Need read annavad sinistele autodele võimaluse liikuda algusesse kui need jõuavad lõppu.
+        Blue1Y = -120
+        score += 1
+        Blue1X = random.randint(130, 460)
 
-# värvid
-red = [255, 0, 0]
-green = [0, 255, 0]
-blue = [0, 0, 255]
-pink = [255, 153, 255]
-lGreen = [153, 255, 153]
-lBlue = [153, 204, 255]
+    if Blue2Y >= 480:
+        Blue2Y = -120
+        score += 1
+        Blue2X = random.randint(130, 460)
 
-# ekraani seaded
-screenX = 640
-screenY = 480
-screen = pygame.display.set_mode([screenX, screenY])
-pygame.display.set_caption("Death Rally")
-bg_rally = pygame.image.load("img/bg_rally.jpg")
-clock = pygame.time.Clock()
-f1_red = pygame.image.load("img/f1_red.png")
-f1_blue = pygame.image.load("img/f1_blue.png")
-blue1 = f1_blue
-blue2 = f1_blue
+    key = pygame.key.get_pressed()  #Nende ridade abil saab vajutada punasel auto liikusmiseks klahve
+    if key[pygame.K_LEFT]:  #Nüüd saab liikuda vasakule
+        RedX -= 5  # Kui kiiresti saab auto liigub vasakule
+    if key[pygame.K_RIGHT]:  #Nüüd saab liigutada paremale
+        RedX += 5  #Kui kiiresti saab auto liigutada paremale
 
-Bspeed = 5
+    #Näitab kuidas mäng võib läbi saada
+    if RedY + 55 >= Blue1Y >= RedY - 55:
+        if RedX + 50 >= Blue1X >= RedX - 50:
+            gameover = True #Mängu lõpp
+    if RedY + 55 >= Blue2Y>= RedY - 55:
+        if RedX+ 50 >= Blue2X >= RedX - 50:
+            gameover = True  #Mängu lõpp
 
-Blue1X, Blue1Y = random.randint(130,460), random.randint(0,100)
-Blue2X, Blue2Y = random.randint(130,460), random.randint(0,100)
-RedX, RedY = 300, 370
+    pygame.display.update() #Uendab mängu ja näitab pilti
+while True: #While tsükkel algab kui mäng saab läbi
+    if gameover:
+        screen.blit(pygame.font.Font(None, 35).render("Game over!", True, [213, 50, 80]), [230, 300]) # Prindib ekraanile et mäng sai läbi
+        screen.blit(pygame.font.Font(None, 35).render(f"Your Score is: {score}", True, [213, 50, 80]),# Saab printida enda tulemust selle mängu lõppus
+                    [210, 200])
+        pygame.display.update()  # Uuendab mängu ja näitab pilti
 
-# koordinaatide loomine ja lisamine massiivi
-coords = []
-for i in range(10):
-    posX = random.randint(130,460)
-    posY = random.randint(0,100)
-    coords.append([posX, posY])
-
-
-gameover = False
-while not gameover:
-    # fps
-    clock.tick(120)
-    # mängu sulgemine ristist
-    events = pygame.event.get()
-    for i in pygame.event.get():
-        if i.type == pygame.QUIT:
+    for event in pygame.event.get():#Selle tsükkli abil saab seda mängu kinni panna
+        if event.type == pygame.QUIT:
             sys.exit()
-
-    # loendist koordinaadid
-    for i in range(len(coords)):
-        screen.blit(bg_rally, [0, 0])
-        screen.blit(blue1, (Blue1X, Blue1Y))
-        screen.blit(blue2, (Blue2X, Blue2Y))
-        screen.blit(f1_red, (RedX, RedY))
-        coords[i][1] += 1
-        # kui jõuab alla, siis muudame ruduu alguspunkti
-        if coords[i][1] > screenY:
-            coords[i][1] = random.randint(-40, -10)
-            coords[i][0] = random.randint(0, screenX)
-
-    pygame.display.flip()
-
-pygame.quit()
-"""
