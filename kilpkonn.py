@@ -1,3 +1,4 @@
+
 import turtle #impordib turtle
 
 white = (255, 255, 255)
@@ -42,3 +43,35 @@ def turtle(self,draw,starts):
 
                     turtle.exitonclick()#sulgeb mängu ekraanile vajutades
                     pygame.quit()
+"""
+import turtle, pygame
+
+white = (255, 255, 255)
+yellow = (255, 255, 102)
+black = (0, 0, 0)
+red = (213, 50, 80)
+green = (0, 255, 0)
+blue = (50, 153, 213)
+
+pcolor = ("black")
+kilpkonna_juhised = [] #loob järjendi
+alex = turtle.Turtle()
+f = open('kilpkonn.txt','r') #avab tekstidokumendi juhistega
+print(f.read()) #loeb neid juhiseid
+for rida in f:
+    kilpkonna_juhised.append(rida.strip)
+    def joonista_kujund(kujund):
+        for käsk in kujund:
+            if käsk[0] == "edasi":
+                alex.forward(int(käsk[1]))
+            elif käsk[0] == "tagasi":
+                alex.backward(int(käsk[1]))
+            elif käsk[0] == "paremale":
+                alex.right(int(käsk[1]))
+            elif käsk[0] == "vasakule":
+                alex.left(int(käsk[1]))
+                pygame.display.update()
+
+turtle.exitonclick()
+pygame.quit()
+"""
