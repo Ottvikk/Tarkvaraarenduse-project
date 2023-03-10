@@ -39,8 +39,7 @@ while not gameover:  #See on While-tsükklis nii kaua kuni mäng on läbi
     screen.blit(bg, (0, 0))
 
     #Siniste autode lisamine mängu ning nende asukoha panemine
-    screen.blit(blue1, (Blue1X, Blue1Y))
-    screen.blit(blue2, (Blue2X, Blue2Y))
+
     screen.blit(red, (RedX, RedY))#Punase auto mängu lisamine
     Blue1Y += Bspeed + random.randint(1,3) + 0.5#Siniste autode liikumiseks valmistuv kiiruse sättimine
     Blue2Y += Bspeed + random.randint(1,3)
