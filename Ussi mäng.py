@@ -1,3 +1,4 @@
+"""
 import pygame
 import time
 import random
@@ -124,3 +125,4 @@ def gameLoop():
 
 
 gameLoop()
+
