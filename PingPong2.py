@@ -24,7 +24,7 @@ score = 0
 
 
 posX, posY = 0, 0       #Palli kiirus ja asukoht
-speedX, speedY = 7, 6
+speedX, speedY = 7, 7
 speedA, speedB = 5,0   #Palgi kiirus ja asukoht
 posA,posB = 0,350
 
@@ -36,6 +36,14 @@ pad = pygame.image.load("img/pad.png") #Palgi mängu toomine, palgi suurus ja ki
 pad = pygame.transform.scale(pad, [120,20])
 pad_rect = pygame.Rect(posA,posB,120,20)
 
+pygame.mixer.music.load('img/Music.mp3')
+Sound = pygame.mixer.Sound('img/Sound.wav')
+pygame.mixer.Sound.set_volume(Sound,1)
+Effect = pygame.mixer.Sound('img/effect.wav')
+pygame.mixer.Sound.set_volume(Effect,1)
+pygame.mixer.music.play(-3)
+taust = pygame.image.load("img/City.jpg")
+taust = pygame.transform.scale(taust, [640, 640])
 
 gameover = False
 while not gameover:#Mängu algus ja tsükkli algus
@@ -45,6 +53,7 @@ while not gameover:#Mängu algus ja tsükkli algus
         if i.type == pygame.QUIT:
             sys.exit()
 
+    screen.blit(taust,(0,0))
     screen.blit(ball, (posX, posY)) #Palli ja palgi ekraanile toomine
     screen.blit(pad, (posA, posB))
     pall = pygame.Rect(posX,posY,20,20)
@@ -63,17 +72,20 @@ while not gameover:#Mängu algus ja tsükkli algus
 
     if posX > screenX - ball.get_rect().width or posX < 0: #Kui pall puutub ääri siis see põrkab
         speedX = -speedX
+        pygame.mixer.Sound.play(Effect)
     if posY > screenY - ball.get_rect().height or posY < 0:
         speedY = -speedY
+        pygame.mixer.Sound.play(Effect)
     if posY > screenY -ball.get_rect().height: #Kui pall puuutub alumist äärt siis läheb punkt maha
         score-=1
+        pygame.mixer.Sound.play(Effect)
     if posA > screenX - pad.get_rect().width or posA < 0: #Kui palk puutub seina siis see põrkab ja liigub alguse poole
         speedA = -speedA
 
     if pall.colliderect(pad_rect) and speedY > 0: #Kui pall puutb palki siis tuleb 1 punkt juurda ja pall põrkab
         speedY = -speedY
         score +=1
-
+        pygame.mixer.Sound.play(Sound)
     pygame.display.update() #Uuendab ekraani
     screen.fill(lBlue) #Muudab tausta värvi.
     if score < -10: #Kui score muutub võiksemaks kui -10 siis see sulgub automaatselt
