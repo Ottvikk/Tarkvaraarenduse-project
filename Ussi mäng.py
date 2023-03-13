@@ -26,7 +26,10 @@ snake_speed = 10
 font_style = pygame.font.SysFont("bahnschrift", 25)
 score_font = pygame.font.SysFont("comicsansms", 35)
 
-
+Apple = pygame.mixer.Sound('img/apple_bite.ogg')
+pygame.mixer.Sound.set_volume(Apple,1)
+taust = pygame.image.load("img/grass.png")
+taust = pygame.transform.scale(taust, [600, 400])
 def Your_score(score):
     value = score_font.render("Your Score: " + str(score), True, white)
     dis.blit(value, [0, 0])
@@ -96,6 +99,7 @@ def gameLoop():
         x1 += x1_change
         y1 += y1_change
         dis.fill(blue)
+        dis.blit(taust,[0,0])
         pygame.draw.rect(dis, red, [foodx, foody, snake_block, snake_block])
         snake_Head = []
         snake_Head.append(x1)
@@ -117,6 +121,7 @@ def gameLoop():
             foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
             foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
             Length_of_snake += 1
+            pygame.mixer.Sound.play(Apple)
 
         clock.tick(snake_speed)
 
