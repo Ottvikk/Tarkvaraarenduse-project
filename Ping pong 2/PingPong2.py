@@ -29,20 +29,20 @@ speedA, speedB = 5,0   #Palgi kiirus ja asukoht
 posA,posB = 0,350
 
 
-ball = pygame.image.load("Ping pong 1/ball.png")#Palli mängu toomine, palli suurus ja kiirus
+ball = pygame.image.load("../Ping pong 1/ball.png")#Palli mängu toomine, palli suurus ja kiirus
 ball = pygame.transform.scale(ball, [20,20])
 ball_rect = pygame.Rect(posX,posY,20,20)
-pad = pygame.image.load("Ping pong 1/pad.png") #Palgi mängu toomine, palgi suurus ja kiirus
+pad = pygame.image.load("../Ping pong 1/pad.png") #Palgi mängu toomine, palgi suurus ja kiirus
 pad = pygame.transform.scale(pad, [120,20])
 pad_rect = pygame.Rect(posA,posB,120,20)
 
-pygame.mixer.music.load('Ping pong 2/Music.mp3')
-Sound = pygame.mixer.Sound('Ping pong 2/Sound.wav')
+pygame.mixer.music.load('Music.mp3')
+Sound = pygame.mixer.Sound('Sound.wav')
 pygame.mixer.Sound.set_volume(Sound,1)
-Effect = pygame.mixer.Sound('Ping pong 2/effect.wav')
+Effect = pygame.mixer.Sound('effect.wav')
 pygame.mixer.Sound.set_volume(Effect,1)
 pygame.mixer.music.play(-3)
-taust = pygame.image.load("img/City.jpg")
+taust = pygame.image.load("../img/City.jpg")
 taust = pygame.transform.scale(taust, [640, 640])
 
 gameover = False
