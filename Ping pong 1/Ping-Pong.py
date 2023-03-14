@@ -29,10 +29,10 @@ speedA, speedB = 5,0   #Palgi kiirus ja asukoht
 posA,posB = 0,350
 
 
-ball = pygame.image.load("img/ball.png")#Palli mängu toomine, palli suurus ja kiirus
+ball = pygame.image.load("ball.png")#Palli mängu toomine, palli suurus ja kiirus
 ball = pygame.transform.scale(ball, [20,20])
 ball_rect = pygame.Rect(posX,posY,20,20)
-pad = pygame.image.load("img/pad.png") #Palgi mängu toomine, palgi suurus ja kiirus
+pad = pygame.image.load("pad.png") #Palgi mängu toomine, palgi suurus ja kiirus
 pad = pygame.transform.scale(pad, [120,20])
 pad_rect = pygame.Rect(posA,posB,120,20)
 
