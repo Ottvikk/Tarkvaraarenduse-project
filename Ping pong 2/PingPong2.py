@@ -42,7 +42,7 @@ pygame.mixer.Sound.set_volume(Sound,1)
 Effect = pygame.mixer.Sound('effect.wav')
 pygame.mixer.Sound.set_volume(Effect,1)
 pygame.mixer.music.play(-3)
-taust = pygame.image.load("../img/City.jpg")
+taust = pygame.image.load("../Snake game/City.jpg")
 taust = pygame.transform.scale(taust, [640, 640])
 
 gameover = False
