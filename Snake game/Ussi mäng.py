@@ -1,4 +1,4 @@
-"""
+
 import pygame
 import time
 import random
@@ -26,12 +26,13 @@ snake_speed = 10
 font_style = pygame.font.SysFont("bahnschrift", 25)
 score_font = pygame.font.SysFont("comicsansms", 35)
 
-Apple = pygame.mixer.Sound('img/apple_bite.ogg')
+Apple = pygame.mixer.Sound('apple_bite.ogg')
 pygame.mixer.Sound.set_volume(Apple,1)
-taust = pygame.image.load("img/grass.png")
+taust = pygame.image.load("grass.png")
 taust = pygame.transform.scale(taust, [600, 400])
+high_score = 0
 def Your_score(score):
-    value = score_font.render("Your Score: " + str(score), True, white)
+    value = score_font.render("Your Score: 0  High Score: 0", True, white)
     dis.blit(value, [0, 0])
 
 
@@ -152,7 +153,7 @@ wn.tracer(0)  # Turns off the screen updates
 # Snake head
 head = turtle.Turtle()
 head.speed(0)
-head.shape("square")
+head.shape("circle")
 head.color("black")
 head.penup()
 head.goto(0, 0)
@@ -261,7 +262,7 @@ while True:
         # Add a segment
         new_segment = turtle.Turtle()
         new_segment.speed(0)
-        new_segment.shape("square")
+        new_segment.shape("triangle")
         new_segment.color("grey")
         new_segment.penup()
         segments.append(new_segment)
@@ -320,4 +321,4 @@ while True:
     time.sleep(delay)
 
 wn.mainloop()
-
+"""
