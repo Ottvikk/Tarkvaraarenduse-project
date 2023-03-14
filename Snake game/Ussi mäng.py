@@ -22,15 +22,18 @@ clock = pygame.time.Clock()
 
 snake_block = 10
 snake_speed = 10
-
+posX, posY = random.randint(0,600), random.randint(0, 400)
 font_style = pygame.font.SysFont("bahnschrift", 25)
 score_font = pygame.font.SysFont("comicsansms", 35)
 
+apple = pygame.image.load("Apple.png")#Palli mängu toomine, palli suurus ja kiirus
+apple = pygame.transform.scale(apple, [20,20])
 Apple = pygame.mixer.Sound('apple_bite.ogg')
 pygame.mixer.Sound.set_volume(Apple,1)
 taust = pygame.image.load("grass.png")
 taust = pygame.transform.scale(taust, [600, 400])
 high_score = 0
+score = 0
 def Your_score(score):
     value = score_font.render("Your Score: 0  High Score: 0", True, white)
     dis.blit(value, [0, 0])
@@ -43,7 +46,7 @@ def our_snake(snake_block, snake_list):
 
 def message(msg, color):
     mesg = font_style.render(msg, True, color)
-    dis.blit(mesg, [dis_width / 6, dis_height / 3])
+    dis.blit(mesg, [dis_width / 10, dis_height / 5])
 
 
 def gameLoop():
@@ -65,7 +68,7 @@ def gameLoop():
     while not game_over:
 
         while game_close == True:
-            dis.fill(blue)
+            dis.fill(black)
             message("You Lost! Press C-Play Again or Q-Quit", green)
             Your_score(Length_of_snake - 1)
             pygame.display.update()
