@@ -1,9 +1,9 @@
-edasi (30)
-paremale (90)
-edasi (30)
-paremale (90)
-edasi (30)
-paremale (90)
-edasi (30)
-vasakule (90)
-
+edasi 100
+paremale 90
+edasi 100
+paremale 90
+edasi 100
+paremale 90
+edasi 100
+vasakule 90
+vasakule 90

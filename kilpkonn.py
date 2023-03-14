@@ -1,94 +1,18 @@
-"""
-import turtle #impordib turtle
-
-white = (255, 255, 255)
-yellow = (255, 255, 102)
-black = (0, 0, 0)
-red = (213, 50, 80)
-green = (0, 255, 0)
-blue = (50, 153, 213)
-
-pcolor = ("black")
-kilpkonna_juhised = [] #loob järjendi
-
-f = open('kilpkonn.txt','r') #avab tekstidokumendi juhistega
-print(f.read()) #loeb neid juhiseid
-for rida in f:
-    kilpkonna_juhised.append(rida.strip)
-def turtle(self,draw,starts):
-    self.turtle = turtle
-    self.draw = draw
-    self.starts = starts
-    def drawing(self):
-        self.draw(starts)
-        if starts == True:
-            turtle.begin_fill(black)
-
-
-
-# tõlgib eestikeelsed juhendid turtleile arusaadavaks
-            def joonista_kujund(kujund, kilpkonn):
-                for käsk in kujund:
-                    if käsk[0] == "edasi":
-                        kilpkonn.forward(int(käsk[1]))
-                    elif käsk[0] == "tagasi":
-                        kilpkonn.backward(int(käsk[1]))
-                    elif käsk[0] == "paremale":
-                        kilpkonn.right(int(käsk[1]))
-                    elif käsk[0] == "vasakule":
-                        kilpkonn.left(int(käsk[1]))
-
-
-                    print(joonista_kujund) #väljastab konsooli juhised
-
-                    turtle.exitonclick()#sulgeb mängu ekraanile vajutades
-                    pygame.quit()
-"""
-"""
-import turtle, pygame
-
-white = (255, 255, 255)
-yellow = (255, 255, 102)
-black = (0, 0, 0)
-red = (213, 50, 80)
-green = (0, 255, 0)
-blue = (50, 153, 213)
-
-pcolor = ("black")
-kilpkonna_juhised = [] #loob järjendi
-alex = turtle.Turtle()
-f = open('kilpkonn.txt','r') #avab tekstidokumendi juhistega
-print(f.read()) #loeb neid juhiseid
-for rida in f:
-    kilpkonna_juhised.append(rida.strip)
-    def joonista_kujund(kujund):
-        for käsk in kujund:
-            if käsk[0] == "edasi":
-                alex.forward(int(käsk[1]))
-            elif käsk[0] == "tagasi":
-                alex.backward(int(käsk[1]))
-            elif käsk[0] == "paremale":
-                alex.right(int(käsk[1]))
-            elif käsk[0] == "vasakule":
-                alex.left(int(käsk[1]))
-                pygame.display.update()
-
-turtle.exitonclick()
-pygame.quit()
-"""
-
 import turtle
 
-def instructions(turtle): #defineerib instructionsid
-    instr = []
-    with open(turtle, 'r') as f: #avab turtle teksti faili
-        for rida in f:
-            command = rida.strip().split(' ')
-            instr.append(command)
-    return instr
+a = input("Sisestage programmi pealkiri: ") #Paneb pealkirja
+turtle.title(a)
 
-def draw_shape(kolmnurk, turtle): #joonistab kujundi
-    for command in kolmnurk:
+def instructions(turtle): #Defineerib sõna instructions
+    juhend = []
+    with open(turtle, 'r') as f: #Avab teksti faili
+        for rida in f:
+            command = rida.strip().split(' ') #Poolitab faili
+            juhend.append(command)
+    return juhend
+
+def draw_shape(ruut, turtle): #Joonistab ruudu
+    for command in ruut:
         if command[0] == 'edasi':
             turtle.forward(int(command[1]))
         elif command[0] == 'tagasi':
@@ -98,20 +22,15 @@ def draw_shape(kolmnurk, turtle): #joonistab kujundi
         elif command[0] == 'vasakule':
             turtle.left(int(command[1]))
 
-how_many = int(input("Mitu korda kujund joonistada? ")) #kysitakse mitu korda kujundit soovitakse joonistada
+kord = int(input("Mitu korda kujund joonistada? :  ")) #Küsib kasutajalt mitu korda joonistatakse seda kujundit
 
-instr = instructions('kilpkonn.txt')
-
-a = input("Sisestage programmi pealkiri: ")
-turtle.title(a)
-
+juhend = instructions('kilpkonn.txt') #Võtab juhendi
 
 turtil = turtle.Turtle()
 turtil.hideturtle()
 turtil.speed(0)
 
-
-for i in range(how_many):
-    draw_shape(instr, turtle)
+for i in range(kord): #Hakkab joonistama
+    draw_shape(juhend, turtle)
 
 turtle.exitonclick()
