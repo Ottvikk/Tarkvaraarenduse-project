@@ -2,6 +2,7 @@ import turtle
 
 a = input("Sisestage programmi pealkiri: ") #Paneb pealkirja
 turtle.title(a)
+kord = int(input("Mitu korda kujund joonistada? :  ")) #Küsib kasutajalt mitu korda joonistatakse seda kujundit
 
 def instructions(turtle): #Defineerib sõna instructions
     juhend = []
@@ -21,8 +22,6 @@ def draw_shape(ruut, turtle): #Joonistab ruudu
             turtle.right(int(command[1]))
         elif command[0] == 'vasakule':
             turtle.left(int(command[1]))
-
-kord = int(input("Mitu korda kujund joonistada? :  ")) #Küsib kasutajalt mitu korda joonistatakse seda kujundit
 
 juhend = instructions('kilpkonn.txt') #Võtab juhendi
 
