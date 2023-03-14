@@ -15,12 +15,12 @@ pygame.display.set_caption("Death Rally")
 clock = pygame.time.Clock()
 score = 0
 
-bg = pygame.image.load("img/bg_rally.jpg")#Piltide mängu lisamine
+bg = pygame.image.load("bg_rally.jpg")#Piltide mängu lisamine
 bg = pygame.transform.scale(bg, [640, 480])
 bgX = 0
-blue1 = pygame.image.load("img/f1_blue.png")
+blue1 = pygame.image.load("f1_blue.png")
 blue2 = blue1
-red = pygame.image.load("img/f1_red.png")
+red = pygame.image.load("f1_red.png")
 
 Blue1Y, Blue1X = random.randint(0, 100), random.randint(130, 460)#Siniste autode X ja Y koordinaadid
 Blue2Y, Blue2X = random.randint(0, 100), random.randint(130, 460)

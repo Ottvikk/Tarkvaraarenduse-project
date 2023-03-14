@@ -130,7 +130,7 @@ def gameLoop():
 
 
 gameLoop()
-""""""
+"""
 # Saab lisada High score
 import turtle
 import time
@@ -320,4 +320,4 @@ while True:
     time.sleep(delay)
 
 wn.mainloop()
-"""
+
