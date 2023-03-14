@@ -1,4 +1,5 @@
 
+"""
 import pygame
 import time
 import random
@@ -134,7 +135,7 @@ def gameLoop():
 
 
 gameLoop()
-"""
+""""""
 # Saab lisada High score
 import turtle
 import time
