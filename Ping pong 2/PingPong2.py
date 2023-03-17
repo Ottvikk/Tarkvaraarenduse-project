@@ -20,8 +20,10 @@ pygame.display.set_caption("Animeerimine")
 screen.fill(lBlue)
 clock = pygame.time.Clock()
 score = 0
+high_score = 0
 
-
+with open('high_score.txt', 'r') as file:
+    high_score = int(file.read())
 
 posX, posY = 0, 0       #Palli kiirus ja asukoht
 speedX, speedY = 7, 7
