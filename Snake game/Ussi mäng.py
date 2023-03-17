@@ -8,7 +8,8 @@ pygame.init()
 # ekraani mõõtmed
 screen_width = 500
 screen_height = 500
-
+taust = pygame.image.load("grass.png")
+taust = pygame.transform.scale(taust, [screen_width, screen_height])
 # määratleme värvid RGB formaadis
 white = (255, 255, 255)
 black = (0, 0, 0)
@@ -18,7 +19,9 @@ green = (0, 255, 0)
 # loome ekraani
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Snake Game")
-high_score =open('high_score.txt')
+high_score_file = open('high_score.txt', 'r')
+high_score = int(high_score_file.read())
+high_score_file.close()
 
 with open('high_score.txt', 'r') as file:
     high_score = int(file.read())
@@ -108,7 +111,7 @@ while not game_over:
                 direction = 'down'
 
     # taustavärv
-    screen.fill(white)
+    screen.blit(taust,(0,0))
 
     # joonistame snake'i
     snake_head = [x, y]
