@@ -18,6 +18,10 @@ green = (0, 255, 0)
 # loome ekraani
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Snake Game")
+high_score = 0
+
+with open('High_score', 'r') as file:
+    high_score = int(file.read())
 
 # snake'i alguskoordinaadid ja suund
 x = screen_width // 2
@@ -128,6 +132,11 @@ while not game_over:
             max_obstacles += 1
             level += 1
 
+    if score > high_score:
+        high_score = score
+        with open('high_score.txt', 'w') as file:
+            file.write(str(high_score))
+
     # loome takistusi
     create_obstacle()
 
@@ -145,6 +154,7 @@ while not game_over:
         game_over = True
 
     # joonistame skoori ja leveli
+    draw_text("High Score: " + str(high_score), 20, black, 250, 10)
     draw_text("Score: " + str(score), 20, black, 10, 10)
     draw_text("Level: " + str(level), 20, black, screen_width - 100, 10)
 
