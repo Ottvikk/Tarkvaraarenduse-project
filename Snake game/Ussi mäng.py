@@ -18,9 +18,9 @@ green = (0, 255, 0)
 # loome ekraani
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Snake Game")
-high_score = 0
+high_score =open('high_score.txt')
 
-with open('High_score', 'r') as file:
+with open('high_score.txt', 'r') as file:
     high_score = int(file.read())
 
 # snake'i alguskoordinaadid ja suund
