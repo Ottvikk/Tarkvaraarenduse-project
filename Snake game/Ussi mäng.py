@@ -1,6 +1,7 @@
 
 import pygame
 import random
+import sys
 
 # initsialiseerime pygame'i
 pygame.init()
@@ -18,7 +19,7 @@ green = (0, 255, 0)
 
 # loome ekraani
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption("Snake Game")
+pygame.display.set_caption("Snake Game by Ott-Saamuel Oja")
 high_score_file = open('high_score.txt', 'r')
 high_score = int(high_score_file.read())
 high_score_file.close()
