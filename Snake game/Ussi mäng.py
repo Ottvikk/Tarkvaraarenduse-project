@@ -23,6 +23,8 @@ pygame.display.set_caption("Snake Game by Ott-Saamuel Oja")
 high_score_file = open('high_score.txt', 'r')
 high_score = int(high_score_file.read())
 high_score_file.close()
+Sound = pygame.mixer.Sound('apple_bite.ogg')
+pygame.mixer.Sound.set_volume(Sound,1)
 
 with open('high_score.txt', 'r') as file:
     high_score = int(file.read())
@@ -132,6 +134,7 @@ while not game_over:
         food_y = round(random.randrange(0, screen_height - snake_block_size) / 10.0) * 10.0
         snake_length += 1
         score += 5
+        pygame.mixer.Sound.play(Sound)
         if score % 20 == 0:
             max_obstacles += 1
             level += 1
