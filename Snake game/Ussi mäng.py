@@ -23,6 +23,8 @@ pygame.display.set_caption("Snake Game by Ott-Saamuel Oja")
 high_score_file = open('high_score.txt', 'r')
 high_score = int(high_score_file.read())
 high_score_file.close()
+pygame.mixer.music.load('No More Magic.mp3')
+pygame.mixer.music.play(-3)
 Sound = pygame.mixer.Sound('apple_bite.ogg')
 pygame.mixer.Sound.set_volume(Sound,1)
 
